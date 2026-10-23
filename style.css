@@ -637,290 +637,453 @@ height:auto;
 
 
 
-@media screen and (max-width: 658px)   {
+/* ===================================================
+   RESPONSIVE DESIGN (TABLETS & MOBILE)
+   =================================================== */
 
-    .flag__birthday .flag__left {
-        transform: rotate(-10deg) translate(-119px,3px);
+/* --- TABLETS & MEDIUM SCREENS (769px - 1024px) --- */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    #wrapper {
+        min-height: 100vh;
+        height: auto;
+        overflow-x: hidden;
     }
 
-    .flag__birthday .flag__right {
-        transform: rotate(10deg) translate(-106px,39px) scaleX(-1);
+    .flag__birthday img {
+        width: 250px;
     }
 
     .content {
-        width: 100%;
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        gap: 25px;
-        align-items: center;
         padding-top: 2rem;
     }
 
+    .content .left {
+        width: 48%;
+        padding-left: 40px;
+    }
+
+    .content .right {
+        width: 52%;
+    }
+
     .title {
-        position: relative;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        font-family: "Titan One", sans-serif;
-        font-size: 1.5rem;
-        letter-spacing: 8px;
-        flex-direction: column;
-        perspective: 1000px;
-    }
-
-    #btn__letter {
-        position: relative;
-        margin-top: 17px;
-        width: 209px;
-        background-color: var(--color-text-pink);
-        outline: none;
-        padding: 6px 4px;
-        font-size: 1rem;
-        border-radius: 50px;
-        border: 3px solid var(--color-black);
-        font-family: "Sriracha", cursive;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        z-index: 2;
-        /* transform: scale(1); */
-        transition: all .5s ease-in-out;
-    }
-
-    .cricle {
-        position: absolute;
-        top: 10px;
-        right: -54px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        transform: scale(0);
-        animation: scaleCricle 3s 15s forwards ease-in-out;
+        font-size: 2.4rem;
     }
 
     .title .hat {
-        position: absolute;
-        right: -98px;
-        top: -51px !important;
-        transform: rotate(-40deg);
-        z-index: -1;
-        animation: topHat 4s 7s forwards ease;
-    }
-
-    .box__letter .letter__border {
-        position: absolute;
-        width: 90vw;
-        height: 315px;
-        background-color: var(--color-white);
-        border-radius: 27px;
-        padding: 17px;
-        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%,-50%);
-        display: none;
-    }
-
-    .letter__border .letter {
-        width: 100%;
-        height: 100%;
-        background-color: var(--color-bg-letter);
-        border-radius: 10px;
-        padding-top: 15px;
-    }
-
-    .letter__border .letter .title__letter {
-        text-align: center;
-        font-family: 'Dancing Script', cursive;
-        font-weight: bold;
-        font-size: 1.4rem;
-    }
-
-    .letter__border .letter .content__letter {
-        position: relative;
-        width: 100%;
-        height: 100%;
-        display: flex;
-        padding-top: .7rem;
-        padding-bottom: 70px;
-    }
-
-    .content__letter .right .text__letter {
-        margin-top: -14px;
-        padding: 20px 15px 10px 15px;
-        font-family: 'Dancing Script', cursive;
-        font-size: .8rem;
-    }
-
-    .content__letter .right .love__img {
-        opacity: 0;
-        position: absolute;
-        right: 126px;
-        top: 167px;
-    }
-
-    .love__img img {
- 
-            width: 84px;
-
+        right: 20px;
+        width: 110px;
     }
 
     .content .right .image {
-        position: relative;
-        width: 200px;
-        height: 200px;
-        border-radius: 50%;
+        width: 320px;
+        height: 320px;
+    }
+
+    .cricle {
+        top: 10px;
+        right: 20px;
+    }
+
+    .box__letter .letter__border {
+        width: 75vw;
+        height: 460px;
+    }
+}
+
+/* --- MOBILE PHONES & SMALL TABLETS (<= 768px) --- */
+@media screen and (max-width: 768px) {
+    html, body {
+        height: auto;
+        min-height: 100%;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+    #wrapper {
+        height: auto;
+        min-height: 100vh;
+        overflow-x: hidden;
+        overflow-y: visible;
+        padding-bottom: 40px;
+    }
+
+    /* Flags */
+    .flag__birthday {
+        width: 100%;
         overflow: hidden;
+    }
+
+    .flag__birthday img {
+        width: min(40vw, 160px) !important;
+        height: auto;
+    }
+
+    .flag__birthday .flag__left {
+        transform: rotate(-8deg) translate(-10px, 15px);
+    }
+
+    .flag__birthday .flag__right {
+        transform: rotate(8deg) translate(10px, 15px) scaleX(-1);
+    }
+
+    /* Main Content */
+    .content {
+        width: 100%;
+        padding: 1rem 1rem 2.5rem;
         display: flex;
+        flex-direction: column;
         align-items: center;
-        border: 6px solid var(--color-black);
+        justify-content: flex-start;
+        gap: 20px;
+        position: relative;
+    }
+
+    .content .left {
+        width: 100%;
+        max-width: 450px;
+        padding-left: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .content .right {
+        width: 100%;
+        max-width: 450px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        margin-top: 10px;
+    }
+
+    /* Title & Hat */
+    .title {
+        font-size: 2.2rem;
+        width: 100%;
+        align-items: center;
+    }
+
+    .title h1 {
+        justify-content: center;
+        text-shadow: 3px 3px var(--color-black), 
+                    -3px 3px var(--color-black), 
+                    3px -3px var(--color-black), 
+                    -3px -3px var(--color-black), 
+                    3px 5px 0 var(--color-black);
+    }
+
+    .title .hat {
+        right: calc(50% - 95px);
+        width: 85px;
+        animation: topHatMobile 4s 7s forwards ease;
+    }
+
+    .title .hat img {
+        width: 85px;
+    }
+
+    @keyframes topHatMobile {
+        20%, 30% {
+            top: -24px;
+            transform-origin: left;
+            transform: rotate(-40deg);
+        }
+        35%, 100% {
+            top: -24px;
+            transform: rotate(0deg);
+        }
+    }
+
+    /* Date of Birth */
+    .date__of__birth {
+        margin-top: 15px;
+        z-index: 2;
+        animation: dateOfBirthMobile 5s 9s forwards;
+    }
+
+    @keyframes dateOfBirthMobile {
+        20%, 40% {
+            width: 0px;
+            height: 0;
+            transform: translateY(0px);
+            opacity: 1;
+            visibility: visible;
+        }
+        45% {
+            width: 260px;
+            height: 0px;
+            transform: translateY(0px);
+            opacity: 1;
+            visibility: visible;
+        }
+        50%, 100% {
+            width: 260px;
+            height: 46px;
+            transform: translateY(0px);
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+
+    .date__of__birth span {
+        font-size: 1.05rem;
+        margin: 0 10px;
+        white-space: nowrap;
+    }
+
+    /* Button */
+    #btn__letter {
+        margin-top: 20px;
+        padding: 8px 24px;
+        font-size: 1.05rem;
+    }
+
+    /* Photo and Badges */
+    .right .box__account {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform: translateY(300px);
+        animation: topBoxImageMobile 6s 7s forwards ease-out;
+    }
+
+    @keyframes topBoxImageMobile {
+        to {
+            transform: translateY(0);
+        }
+    }
+
+    .content .right .image {
+        width: min(240px, 68vw);
+        height: min(240px, 68vw);
+        border: 5px solid var(--color-black);
     }
 
     .name {
         position: absolute;
-        padding: 0px 3px;
-        bottom: -6px;
+        bottom: -14px;
+        padding: 3px 20px;
+        white-space: nowrap;
         border: 3px solid var(--color-black);
     }
 
     .name span {
-        font-size: 1rem;
+        font-size: 1.25rem;
+        margin: 0 10px;
     }
 
     .right .balloon_one {
-        position: absolute;
-        top: 10px;
-        left: -77px;
-        animation: balloon1 2s infinite linear;
+        top: -30px;
+        left: -20px;
     }
 
-    .right .balloon_one img{
-        width: 76px !important;
+    .right .balloon_one img {
+        width: 60px !important;
     }
-    body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Arial', sans-serif;
-  background: #ffe6f0;
-  text-align: center;
+
+    .right .balloon_two {
+        top: 90px;
+        right: -20px;
+    }
+
+    .right .balloon_two img {
+        width: 60px !important;
+    }
+
+    .cricle {
+        top: -10px;
+        right: calc(50% - 130px);
+    }
+
+    .text__cricle {
+        width: 72px;
+        height: 72px;
+        border-width: 4px;
+    }
+
+    .text__cricle span {
+        transform-origin: 0 32px;
+        font-size: 0.52rem;
+    }
+
+    /* Decorative items repositioned safely */
+    .decorate_star.star1 { left: 10%; top: 60px; }
+    .decorate_star.star2 { right: 10%; top: 30px; }
+    .decorate_star.star3 { left: 85%; top: 200px; }
+    .decorate_star.star4 { left: 6%; bottom: 30px; }
+    .decorate_star.star5 { left: 65%; bottom: 70px; }
+
+    .decorate_flower--one { left: 4%; top: 180px; }
+    .decorate_flower--two { display: none; }
+    .decorate_flower--three { right: 4%; top: 120px; }
+    .smiley__icon { display: none; }
+    .decorate_bottom { right: 0; bottom: 0; }
+    .decorate_bottom img { width: 70px; }
+
+    /* Modal Letter */
+    .box__letter .letter__border {
+        width: min(92vw, 430px);
+        height: auto;
+        max-height: 86vh;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 12px;
+        border-radius: 20px;
+        overflow-y: auto;
+        overflow-x: hidden;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .letter__border .letter {
+        height: auto;
+        min-height: 100%;
+        padding: 12px 10px 18px;
+    }
+
+    .letter__border .letter .title__letter {
+        font-size: 1.8rem;
+    }
+
+    .letter__border .letter .content__letter {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        padding-top: 0.5rem;
+        padding-bottom: 10px;
+    }
+
+    .letter__border .letter .content__letter .left {
+        width: 100%;
+        height: auto;
+        border-right: none;
+        border-bottom: 2px dashed var(--color-border);
+        padding: 8px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .content__letter .left #heart__letter {
+        max-width: 110px;
+        height: auto;
+    }
+
+    .content__letter .left .heart_1 { top: 10px; left: 15px; }
+    .content__letter .left .heart_2 { top: 10px; right: 15px; }
+    .content__letter .left .heart_3 { bottom: 10px; left: 30px; }
+    .content__letter .left .heart_4 { bottom: 10px; right: 30px; }
+
+    .content__letter .right {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 5px 0 0;
+    }
+
+    .content__letter .right .love__img {
+        position: relative;
+        top: 0;
+        right: 0;
+        display: flex;
+        justify-content: center;
+        margin-top: 6px;
+    }
+
+    .content__letter .right .love__img img {
+        width: 120px;
+        height: auto;
+    }
+
+    .content__letter .right .text__letter {
+        margin-top: 6px;
+        padding: 6px 8px;
+        font-size: 1.15rem;
+        line-height: 1.5;
+        text-align: center;
+    }
+
+    .content__letter .right #mewmew {
+        position: relative;
+        bottom: 0;
+        right: 0;
+        margin: 10px auto 0;
+        display: block;
+        width: 60px;
+        height: auto;
+    }
+
+    .letter__border .close {
+        right: 6px;
+        top: 6px;
+        width: 32px;
+        height: 32px;
+        z-index: 30;
+    }
 }
 
-.container {
-  margin-top: 100px;
-}
+/* --- EXTRA SMALL MOBILE (<= 380px) --- */
+@media screen and (max-width: 380px) {
+    .title {
+        font-size: 1.85rem;
+    }
 
-h1 {
-  color: #d63384;
-  font-size: 48px;
-  margin-bottom: 40px;
-}
+    .title .hat {
+        right: calc(50% - 80px);
+        width: 72px;
+    }
 
-.button-group button {
-   position: relative;
-    right: 0px;
-    top: -200px;
-    background-color: var(--color-text-pink);
-    outline: none;
-    padding: 5px 20px;
-    font-size: 10px;
-    border-radius: 50px;
-    border: 3px solid var(--color-black);
-    font-family: "Sriracha", cursive;
-    display: flat;
-    align-items:center;
-    justify-content: center;
-    cursor: pointer;
-    z-index: 22;
-    transform: scale(1);
-    transition: all .5s ease-in-out;
-}
+    .title .hat img {
+        width: 72px;
+    }
 
-.button-group button:hover {
-  background-color: #ff1493;
-  transform: scale(1.05);
-}
+    @keyframes dateOfBirthMobile {
+        20%, 40% {
+            width: 0px;
+            height: 0;
+            transform: translateY(0px);
+            opacity: 1;
+            visibility: visible;
+        }
+        45% {
+            width: 235px;
+            height: 0px;
+            transform: translateY(0px);
+            opacity: 1;
+            visibility: visible;
+        }
+        50%, 100% {
+            width: 235px;
+            height: 42px;
+            transform: translateY(0px);
+            opacity: 1;
+            visibility: visible;
+        }
+    }
 
-@keyframes pulse {
-  0% { box-shadow: 0 0 0 0 rgba(255, 105, 180, 0.7); }
-  70% { box-shadow: 0 0 0 10px rgba(255, 105, 180, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(255, 105, 180, 0); }
-}
+    .date__of__birth span {
+        font-size: 0.92rem;
+        margin: 0 6px;
+    }
 
-    
+    .content .right .image {
+        width: 210px;
+        height: 210px;
+    }
 
-}
+    .cricle {
+        right: calc(50% - 115px);
+    }
 
-/* ===== MOBILE RESPONSIVE ===== */
-
-@media (max-width:768px){
-
-.content{
-flex-direction:column;
-text-align:center;
-padding:20px;
-}
-
-.left,
-.right{
-width:1%;
-}
-
-.title h1{
-font-size:32px;
-}
-
-.flag__birthday img{
-width:10px;
-}
-
-.box__account .image img{
-width:180px;
-}
-
-.btn button{
-padding:10px 20px;
-font-size:16px;
-}
-
-.cricle{
-transform:scale(0.8);
-}
-
-.content__letter{
-flex-direction:column;
-text-align:center;
-}
-
-.box__letter{
-width:90%;
-left:50%;
-transform:translateX(-50%);
-}
-
-}
-
-/* ===== SMALL PHONE ===== */
-
-@media (max-width:480px){
-
-.title h1{
-font-size:24px;
-}
-
-.flag__birthday img{
-width:120px;
-}
-
-.box__account .image img{
-width:150px;
-}
-
-.btn button{
-font-size:14px;
-padding:8px 16px;
-}
-
+    .content__letter .right .text__letter {
+        font-size: 1.02rem;
+        padding: 4px;
+    }
 }
